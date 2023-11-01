@@ -4,7 +4,11 @@
     padding: 0 15px;
     align-items: center;
     background-color: black;
-    color: orange;
-    height: 70px;
+    font-weight: 600;
+    color: whitesmoke;
+    height: 70px
 }
 
+.logo {
+    font-size: 22px;
+}
