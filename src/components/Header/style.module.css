@@ -1,8 +1,9 @@
 .header {
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     padding: 0 15px;
     align-items: center;
+    gap: 15px;
     background-color: black;
     font-weight: 600;
     color: whitesmoke;
@@ -11,4 +12,9 @@
 
 .logo {
     font-size: 22px;
+    margin-right: 60px;
+}
+
+.authorization {
+    margin-left: auto;
 }

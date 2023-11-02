@@ -6,8 +6,8 @@ export const GAMES_URL = 'https://api.rawg.io/api/games'
 
 
 
-export async function receiveGames(page:number): Promise<Games> {
-    const url = createUrl(GAMES_URL, TOKEN, page);
+export async function receiveGames(page:number, search: string): Promise<Games> {
+    const url = createUrl(GAMES_URL, TOKEN, page, search);
     const response = await fetch(url);
 
     if(!response.ok) {
@@ -17,5 +17,7 @@ export async function receiveGames(page:number): Promise<Games> {
     const json = await response.json();
     return json
 }
+
+
 
 

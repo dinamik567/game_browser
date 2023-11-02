@@ -10,9 +10,9 @@ interface typeAction {
 }
 
 
-export function fetchGames(page:number=1) {
+export function fetchGames(page:number=1, search: string) {
     return async (dispatch:ThunkDispatch<RootState, number | undefined, typeAction>) => {
-        const result = await receiveGames(page);
+        const result = await receiveGames(page, search);
         dispatch(getGames(result))
     }
 }

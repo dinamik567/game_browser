@@ -1,5 +1,5 @@
 
-export const createUrl = (baseUrl: string, key: string, page: number): string => {
-    return `${baseUrl}?key=${key}&page=${page}`;
+export const createUrl = (baseUrl: string, key: string, page: number, search: string): string => {
+    return `${baseUrl}?key=${key}&page=${page}&search=${search}`;
 }
 
