@@ -1,26 +1,21 @@
 import './App.css';
 import { useEffect } from 'react';
 import { Header } from './components/Header/index';
-import { ListOfGameCards } from './components/List-of-game-cards'
 import { fetchGames } from './store/games/thunk';
-import { PaginationPage } from './components/Pagination-page/pagination';
 import { useAppDispatch } from './store/store';
 import { useAppSelector } from './hooks';
-import { Stack } from '@mui/material';
-import { Filters } from './components/Filters';
+import { CardGameDetails } from './components/Card-games-details';
+import { getGenresValue, getPageValue, getPlatformName, getSearchValue, getSortValue } from './store/filters/filters-selectors';
 
 
 
 function App() {
   const dispatch = useAppDispatch()
-  const page = useAppSelector(state => state.filterReducer.page);
-  const search = useAppSelector(state => state.filterReducer.search);
-  const sortValue = useAppSelector(state => state.filterReducer.sort);
-  const genres = useAppSelector(state => state.filterReducer.genres);
-  const platform = useAppSelector(state => state.filterReducer.platforms);
-  const games = useAppSelector(state => state.gamesReducer);
-
-  console.log(games)
+  const page = useAppSelector(getPageValue);
+  const search = useAppSelector(getSearchValue);
+  const sortValue = useAppSelector(getSortValue);
+  const genres = useAppSelector(getGenresValue);
+  const platform = useAppSelector(getPlatformName);
 
   useEffect(() => {
     dispatch(fetchGames(page, search, sortValue, genres, platform))
@@ -30,11 +25,13 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Stack direction='row' spacing={1.5}>
+      {/* <Stack direction='row' spacing={1.5}>
         <Filters/>
         <ListOfGameCards/>
       </Stack>
-      <PaginationPage/>
+      <PaginationPage/> */}
+
+      <CardGameDetails />
     </div>
   );
 }

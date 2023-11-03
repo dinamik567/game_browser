@@ -1,14 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { Filters } from "../../types/type";
 
-interface IFilters {
-    page: number;
-    search: string;
-    sort: string;
-    genres: string;
-    platforms: string;
-}
 
-const initialState:IFilters = {
+const initialState:Filters = {
     page: 1,
     search: '',
     sort: '',
@@ -27,7 +21,6 @@ const filterSlice = createSlice({
         changeSelectedPlatform: (state, action: PayloadAction<string>) => ({...state, platforms: action.payload}),
     }
 })
-
 
 export const { reducer, actions } = filterSlice;
 export const { 

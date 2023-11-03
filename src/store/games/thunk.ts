@@ -3,13 +3,11 @@ import { receiveGames } from '../../api/api'
 import { getGames } from './games-slice';
 import { Games } from '../../types/type'
 import { RootState } from '../store';
-import { platform } from 'os';
 
 interface typeAction {
     type: string;
     payload: Games;
 }
-
 
 export function fetchGames(
         page:number=1, 

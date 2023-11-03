@@ -28,3 +28,16 @@ export interface Games {
     seo_h1?: string,
     seo_keywords?: string,
 }
+
+export interface Filters {
+    page: number;
+    search: string;
+    sort: string;
+    genres: string;
+    platforms: string;
+}
+
+export interface IStore {
+    filterReducer: Filters,
+    gamesReducer: Games
+}
