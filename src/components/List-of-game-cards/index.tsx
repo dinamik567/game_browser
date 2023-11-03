@@ -10,7 +10,7 @@ export const ListOfGameCards = () => {
         <div style={{
             paddingTop: '15px', 
             display: 'flex', 
-            justifyContent: 'space-between', 
+            justifyContent: 'left', 
             flexWrap: 'wrap'
         }}>
             {gamesList?.map(game => {

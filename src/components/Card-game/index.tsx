@@ -11,7 +11,7 @@ export const CardGame:FC<CardGameProps> = ({dateOfGame}) => {
     return (
         <Card
             component='div'
-            sx={{maxWidth: 325, margin: '10px'}}
+            sx={{maxWidth: 300, margin: '10px'}}
         >
             <CardMedia
                 component='img'

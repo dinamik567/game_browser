@@ -12,8 +12,9 @@ export const SearchInput = () => {
 
     return (
         <TextField 
-            sx={{backgroundColor: 'orange', maxWidth: '600px', borderRadius: '20px'}} 
+            sx={{backgroundColor: 'gray', maxWidth: '250px', borderRadius: '20px'}} 
             fullWidth
+            size="small"
             placeholder="Name game"
             id="search"
             value={value}
