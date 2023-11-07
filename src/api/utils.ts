@@ -10,3 +10,6 @@ export const createUrl = (
     return `${baseUrl}?key=${key}&page=${page}&search=${search}&ordering=${sort}&genres=${genres}&parent_platforms=${platform}`;
 }
 
+export const createUrlDetails = (url: string, key: string, id: number): string => {
+    return `${url}${id}?key=${key}`
+}

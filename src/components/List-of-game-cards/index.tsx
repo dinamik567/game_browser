@@ -7,7 +7,6 @@ import { getGamesArray } from '../../store/games/games-selectors';
 export const ListOfGameCards = () => {
     const gamesList:DateOfGame[] | undefined = useAppSelector(getGamesArray);
 
-    console.log(gamesList)
     return (
         <div style={{
             paddingTop: '15px', 

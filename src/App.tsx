@@ -4,9 +4,17 @@ import { Header } from './components/Header/index';
 import { fetchGames } from './store/games/thunk';
 import { useAppDispatch } from './store/store';
 import { useAppSelector } from './hooks';
-import { CardGameDetails } from './components/Card-games-details';
-import { getGenresValue, getPageValue, getPlatformName, getSearchValue, getSortValue } from './store/filters/filters-selectors';
-
+import { Filters } from './components/Filters/';
+import { ListOfGameCards } from './components/List-of-game-cards';
+import { PaginationPage } from './components/Pagination-page/'
+import { 
+  getGenresValue, 
+  getPageValue, 
+  getPlatformName, 
+  getSearchValue, 
+  getSortValue 
+} from './store/filters/filters-selectors';
+import { Stack } from '@mui/material';
 
 
 function App() {
@@ -25,13 +33,11 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Stack direction='row' spacing={1.5}>
+      <Stack direction='row' spacing={1.5}>
         <Filters/>
         <ListOfGameCards/>
       </Stack>
-      <PaginationPage/> */}
-
-      <CardGameDetails />
+      <PaginationPage/>
     </div>
   );
 }

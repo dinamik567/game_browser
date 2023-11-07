@@ -1,7 +1,17 @@
 export interface Platforms {
     id: number;
     name: string;
-    platform: {id: number, name: string};
+    platform: IPlatform;
+}
+
+export interface IPlatform {
+    id: number;
+    name: string;
+}
+
+export interface IGameStore {
+    id: number;
+    name: string;
 }
 
 export interface DateOfGame {
@@ -11,6 +21,7 @@ export interface DateOfGame {
     rating: string;
     background_image: string;
     platforms: Platforms[];
+    stores: {store: IGameStore}[]
 }
 
 export interface Games {
@@ -40,4 +51,16 @@ export interface Filters {
 export interface IStore {
     filterReducer: Filters,
     gamesReducer: Games
+}
+
+export interface IGameDetails {
+    id: number;
+    name: string;
+    description_raw: string;
+    background_image: string;
+    stores: {id: number; store: {
+        id: number;
+        name: string;
+    }}[];
+    platforms: {platform: IPlatform}[]
 }

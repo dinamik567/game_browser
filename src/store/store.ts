@@ -1,11 +1,13 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { useDispatch } from 'react-redux'
 import { reducer as gamesReducer } from './games/games-slice';
-import { reducer as filterReducer } from './filters/filters-slice'
+import { reducer as filterReducer } from './filters/filters-slice';
+import { reducer as cardDetailsReducer } from './card-details/card-details-slice'
 
 const rootReducer = combineReducers({
     gamesReducer,
-    filterReducer
+    filterReducer,
+    cardDetailsReducer
 })
 
 export const store = configureStore({

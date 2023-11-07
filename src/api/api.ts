@@ -1,8 +1,9 @@
-import { createUrl } from "./utils";
-import { Games } from '../types/type'
+import { createUrl, createUrlDetails } from "./utils";
+import { Games, IGameDetails } from '../types/type'
 
 export const TOKEN = '85b67422d40048fea532e0e3be936b72';
 export const GAMES_URL = 'https://api.rawg.io/api/games'
+export const GAMES_DETAILS = 'https://api.rawg.io/api/games/'
 
 export async function receiveGames(
         page:number, 
@@ -22,6 +23,17 @@ export async function receiveGames(
     return json
 }
 
+export async function receiveDetailsGame(id: number): Promise<IGameDetails> {
+    const url = createUrlDetails(GAMES_DETAILS, TOKEN, id);
+    const response = await fetch(url);
 
+    if(!response.ok) {
+        throw new Error('Ошибка при получении');
+    }
 
+    const json = await response.json();
+    return json;
+}
+
+receiveDetailsGame(1030)
 

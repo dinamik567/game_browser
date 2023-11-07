@@ -1,13 +1,14 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react';
 import { Card, CardHeader, CardMedia, Typography, Box } from '@mui/material'
-import { DateOfGame } from '../../types/type'
+import { DateOfGame } from '../../types/type';
+import { Link } from 'react-router-dom';
 
 interface CardGameProps  {
     dateOfGame: DateOfGame;
 }
 
 export const CardGame:FC<CardGameProps> = ({dateOfGame}) => {
-    
+
     return (
         <Card
             component='div'
@@ -18,10 +19,12 @@ export const CardGame:FC<CardGameProps> = ({dateOfGame}) => {
                 sx={{height: '225px'}}
                 image={dateOfGame.background_image}
             />
-            <CardHeader
-                sx={{textAlign: 'center'}}
-                title={dateOfGame.name}
-            />
+            <Link to={`card-details/${dateOfGame.id}`}>
+                <CardHeader
+                    sx={{textAlign: 'center'}}
+                    title={dateOfGame.name}
+                />
+            </Link>
             <Box
                 component='div'
                 padding='15px'
