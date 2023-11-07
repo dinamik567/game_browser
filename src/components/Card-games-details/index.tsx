@@ -3,12 +3,10 @@ import { LoaderFunction, useLoaderData } from "react-router-dom";
 import { IGameDetails } from '../../types/type'
 import { receiveDetailsGame } from '../../api/api'
 import { useNavigate } from "react-router-dom";
-interface Params {
-    userId: string
-}
 
-export const loader: LoaderFunction = async ({params}) => {
-    const { userId } = params as unknown as Params;
+
+export const loader: LoaderFunction<IGameDetails> = async ({params}) => {
+    const { userId } = params
     const gameDetails = await receiveDetailsGame(Number(userId));
 
     return gameDetails
@@ -18,7 +16,6 @@ export const CardGameDetails = () => {
     const navigate = useNavigate();
     const game = useLoaderData() as IGameDetails;
 
-    console.log(game)
     function handleClickCard() {
         navigate(-1)
     }
