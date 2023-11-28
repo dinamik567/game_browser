@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+API TOKEN can be obtained here https://rawg.io/apidocs#why-rawg-api
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
